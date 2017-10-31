@@ -39,6 +39,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker', '~> 1.6.6'
+  gem 'factory_girl_rails', '~> 4.7.0'
 end
 
 group :development do
@@ -48,7 +53,56 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # A Ruby static code analyzer, based on the community Ruby style guide.
+  gem 'rubocop', '~> 0.47.1', require: false
+
+  # A code metric tool to check the quality of Rails code.
+  gem 'rails_best_practices', '~> 1.17.0', require: false
+
+  # Better error page for Rack apps
+  gem 'better_errors', '~> 2.1.1', require: false
+
+  gem 'binding_of_caller', '~> 0.7.2', require: false
+
+  # Guard::RSpec automatically run your specs (much like autotest)
+  gem 'guard', '~> 2.13.0', require: false
+  gem 'guard-rspec', '~> 4.6.4', require: false
+
+  # Allows to automatically reload your browser when 'view' files are modified.
+  gem 'guard-livereload', '~> 2.5', require: false
+
+  # Check Ruby on Rails applications for security vulnerabilities
+  gem 'brakeman', '~> 3.5.0', require: false
+
+  # Add a comment summarizing the current schema to the top or bottom of each of your models,..
+  gem 'annotate', '~> 2.6.5'
+
+  gem 'pry', '~> 0.11.1'
+
+  # Auto generate Entitu Relationship Diagram based on Active Record model
+  gem 'rails-erd', '~> 1.5.2', require: false
+end
+
+group :test do
+  # Clean our test database to ensure a clean state in each test suite
+  gem 'database_cleaner', '~> 1.5.1'
+
+  gem 'rails-controller-testing', '~> 1.0.1'
+
+  gem 'webmock', '~> 3.0.1'
+
+  gem 'rb-readline'
+
+  gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
+
+  gem 'timecop', '~> 0.9.1'
+
+  gem 'codacy-coverage'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# A Ruby gem to load environment variables from `.env`
+gem 'dotenv-rails', '~> 2.2.1'
