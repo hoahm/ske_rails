@@ -2,8 +2,8 @@ nav.side-navbar
   .side-navbar-wrapper
     .sidenav-header.d-flex.align-items-center.justify-content-center
       .sidenav-header-inner.text-center
-        = image_tag "avatar-1.jpg", class: "img-fluid rounded-circle", alt: "person"
-        h2.h5.text-uppercase Anderson Hardy
+        = user_avatar(current_user)
+        h2.h5.text-uppercase= current_user.full_name
         span.text-uppercase Web Developer
       .sidenav-header-logo
         a.brand-small.text-center href="index.html"

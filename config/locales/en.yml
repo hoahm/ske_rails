@@ -1,6 +1,26 @@
 en:
   breadcrumb:
     home: Home
-  shared:
-    footer:
-      copyright: 'Nobi Hoang &copy; %{year}'
+  helpers:
+    sign_in: Sign in
+    sign_up: Sign up
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    hints:
+      user:
+    labels:
+      defaults:
+        email: Email
+        full_name: Name
+        password: Password
+    'no': 'No'
+    required:
+      html: <abbr title="required">*</abbr>
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+    placeholder:
+      user:
+        email: Email
+        full_name: Full name

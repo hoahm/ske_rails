@@ -114,3 +114,9 @@ gem 'simple_form', '~> 3.5.0'
 gem 'breadcrumbs_on_rails', '~> 3.0.1'
 
 gem 'kaminari', '~> 1.0.1'
+
+gem 'devise', '~> 4.3.0'
+
+gem 'paperclip', '~> 5.0.0'
+
+gem 'enumerize', '~> 2.1.2'

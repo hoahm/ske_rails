@@ -1,0 +1,12 @@
+.container
+  .form-outer.text-center.d-flex.align-items-center
+    .form-inner
+      .logo.text-uppercase
+        strong.text-primary SIGN IN
+      p This is a skeleton of Rails application. Please login to see the demo.
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "login-form", class: "form-horizontal" }, wrapper: :horizontal_form) do |f|
+        = f.text_field :email, required: false, autofocus: true, autocomplete: "off"
+        = f.text_field :password, type: :password, required: false, autocomplete: "off"
+        = f.button :submit, t('helpers.sign_in'), class: "login btn btn-primary"
+
+      = render "devise/shared/links"

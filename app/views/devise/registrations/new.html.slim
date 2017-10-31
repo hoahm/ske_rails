@@ -1,0 +1,15 @@
+.container
+  .form-outer.text-center.d-flex.align-items-center
+    .form-inner
+      .logo.text-uppercase
+        strong.text-primary SIGN UP
+      p This is a skeleton of Rails application. Please sign up to see the demo.
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "login-form", class: "form-horizontal" }, wrapper: :horizontal_form) do |f|
+        = f.error_notification
+        = f.text_field :full_name, required: true, autofocus: true, placeholder: "Full name"
+        = f.text_field :email, required: true, autocomplete: "off", placeholder: "Email"
+        = f.text_field :password, type: :password, required: true, autocomplete: "off", placeholder: "Password"
+        = f.text_field :password_confirmation, type: :password, required: true, autocomplete: "off", placeholder: "Password confirmation"
+        = f.button :submit, t('helpers.sign_up'), class: "login btn btn-primary"
+
+      = render "devise/shared/links"
