@@ -1,23 +1,25 @@
 section.charts
   .container-fluid
     header
-      h1.h3.display= "Role: #{@role.name}"
+      - if can?(:create, User)
+        = new_resource_btn(User, new_manage_user_path)
     .row
       .col-md-12
         .card
           .card-header.d-flex.align-items-center
-              h2.h5.display Users
+            h2.h5.display Users
           .card-body
             table.table.table-striped.table-hover
               thead
                 tr
                   td #
                   td= User.human_attribute_name(:full_name)
+                  td= User.human_attribute_name(:created_at)
+                  td= User.human_attribute_name(:last_sign_in_at)
+                  td
               tbody
                 - @users.each do |user|
-                  tr
-                    td= link_to user.id, manage_user_path(user)
-                    td= link_to user.full_name, manage_user_path(user)
+                  = render partial: "/manage/users/user", locals: { user: user }
             .row
               .col-sm-3
 

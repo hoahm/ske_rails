@@ -1,5 +1,5 @@
 module RolesHelper
   def resource_class
-    %w( user )
+    %w(user)
   end
 end

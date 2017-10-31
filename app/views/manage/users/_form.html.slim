@@ -1,0 +1,23 @@
+section.forms
+  .container-fluid
+    header
+      h1.h3.display &nbsp;
+    .row
+      .col-md-12.col-lg-12
+        .card
+          .card-header.d-flex.align-items-center
+            h2.h5.display.display= t('.role')
+          .card-body
+            = simple_form_for([:manage, @user], html: { class: "form-horizontal" }, wrapper: :horizontal_form) do |f|
+              = f.input :full_name, class: "form-control", autocomplete: :off, autofocus: true
+              = f.input :email, class: "form-control", autocomplete: :off
+              - unless @user.persisted?
+                = f.input :password, class: "form-control",  autocomplete: :off
+              = f.input :avatar, class: "form-control"
+              = f.association :role, class: "form-control"
+
+              .form-group.row
+                .offset-sm-2.col-sm-10
+                  .btn-toolbar
+                    = f.submit t('helpers.submit'), class: "btn btn-primary"
+                    = link_to t('helpers.cancel'), :back, class: "btn"

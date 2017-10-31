@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
+  namespace :manage do
+    resources :users
+  end
+
   resources :roles
 
   root 'home#index'

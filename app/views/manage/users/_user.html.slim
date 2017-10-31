@@ -1,0 +1,12 @@
+tr
+  td= link_to user.id, manage_user_path(user)
+  td= user.full_name
+  td= format_datetime(user.created_at)
+  td= format_datetime(user.last_sign_in_at)
+  td
+    - if can?(:read, user)
+      = view_resource_btn manage_user_path(user)
+    - if can?(:update, user)
+      = edit_resource_btn edit_manage_user_path(user)
+    - if can?(:destroy, user)
+      = destroy_resource_btn manage_user_path(user)
