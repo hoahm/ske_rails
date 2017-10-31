@@ -106,3 +106,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # A Ruby gem to load environment variables from `.env`
 gem 'dotenv-rails', '~> 2.2.1'
+
+gem 'slim', '~> 3.0.8'
+
+gem 'simple_form', '~> 3.5.0'
+
+gem 'breadcrumbs_on_rails', '~> 3.0.1'
+
+gem 'kaminari', '~> 1.0.1'

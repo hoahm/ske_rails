@@ -11,5 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require_tree .
+//
+//= require themes/jquery
+//= require themes/popper.min
+//= require themes/bootstrap.min
+//= require themes/jquery.cookie
+//= require themes/grasp_mobile_progress_circle-1.0.0.min
+//= require themes/jquery.mCustomScrollbar
+//= require themes/front
+//= require custom
+//
+// require_self
