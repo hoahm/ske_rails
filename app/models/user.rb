@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :role, required: false
+
   has_attached_file :avatar,
     styles: { thumb: ['300x300#', :jpg] },
     convert_options: { thumb: '-quality 80 -strip' },

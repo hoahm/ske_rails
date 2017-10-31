@@ -26,5 +26,9 @@ module SkeRails
 
     config.autoload_paths << Rails.root.join('app')
     config.eager_load_paths << Rails.root.join('lib')
+
+    config.time_zone = 'Hanoi'
+    config.i18n.default_locale = :en
+    config.i18n.fallbacks = [:en]
   end
 end

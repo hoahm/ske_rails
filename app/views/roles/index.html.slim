@@ -1,0 +1,26 @@
+section.charts
+  .container-fluid
+    header
+      - if can?(:create, Role)
+        = new_resource_btn(Role, new_role_path)
+    .row
+      .col-md-12
+        .card
+          .card-header.d-flex.align-items-center
+            h2.h5.display Roles
+          .card-body
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  td #
+                  td= Role.human_attribute_name(:name)
+                  td= Role.human_attribute_name(:total_users)
+                  td
+              tbody
+                - @roles.each do |role|
+                  = render partial: "/roles/role", locals: { role: role }
+            .row
+              .col-sm-3
+
+              .col-sm-6.text-center
+                = paginate @roles

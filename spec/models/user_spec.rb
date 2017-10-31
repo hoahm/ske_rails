@@ -17,6 +17,8 @@ RSpec.describe User, type: :model do
 
     it { should have_db_column(:full_name).of_type(:string) }
     it { should have_db_column(:state).of_type(:integer) }
+    it { should have_db_column(:role_id).of_type(:integer) }
+    it { should have_db_column(:is_root).of_type(:boolean) }
 
     it { should have_db_column(:avatar_file_name) }
     it { should have_db_column(:avatar_content_type) }
@@ -24,6 +26,11 @@ RSpec.describe User, type: :model do
     it { should have_db_column(:avatar_updated_at) }
 
     it { should have_db_index(:email) }
+  end
+
+  describe 'Associations' do
+    it { should belong_to(:role) }
+    it { expect(User.reflect_on_association(:role).macro).to eq(:belongs_to) }
   end
 
   describe 'Validations' do

@@ -1,0 +1,26 @@
+section.charts
+  .container-fluid
+    header
+      h1.h3.display= "Role: #{@role.name}"
+    .row
+      .col-md-12
+        .card
+          .card-header.d-flex.align-items-center
+              h2.h5.display Users
+          .card-body
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  td #
+                  td= User.human_attribute_name(:full_name)
+                  td
+              tbody
+                - @users.each do |user|
+                  tr
+                    td= link_to user.id, user_path(user)
+                    td= link_to user.full_name, user_path(user)
+            .row
+              .col-sm-3
+
+              .col-sm-6.text-center
+                = paginate @users

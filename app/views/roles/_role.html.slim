@@ -1,0 +1,11 @@
+tr
+  td= link_to role.id, role_path(role)
+  td= role.name
+  td= role.users.count
+  td
+    - if can?(:read, role)
+      = view_resource_btn role_path(role)
+    - if can?(:update, role)
+      = edit_resource_btn edit_role_path(role)
+    - if can?(:destroy, role)
+      = destroy_resource_btn role_path(role)

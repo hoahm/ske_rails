@@ -120,3 +120,5 @@ gem 'devise', '~> 4.3.0'
 gem 'paperclip', '~> 5.0.0'
 
 gem 'enumerize', '~> 2.1.2'
+
+gem 'cancancan', '~> 2.0.0'

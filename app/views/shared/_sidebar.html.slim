@@ -4,69 +4,25 @@ nav.side-navbar
       .sidenav-header-inner.text-center
         = user_avatar(current_user)
         h2.h5.text-uppercase= current_user.full_name
-        span.text-uppercase Web Developer
+        span.text-uppercase= current_user.role ? current_user.role.name : ''
       .sidenav-header-logo
-        a.brand-small.text-center href="index.html"
-          strong B
-          strong.text-primary D
+        = link_to root_path, class: "brand-small text-center" do
+          strong S
+          strong.text-primary R
     .main-menu
       ul#side-main-menu.side-menu.list-unstyled
         li.active
-          a href="index.html"
+          = link_to root_path do
             i.icon-home
-            span Home
-        li
-          a href="forms.html"
-            i.icon-form
-            span Forms
-        li
-          a href="charts.html"
-            i.icon-presentation
-            span Charts
-        li
-          a href="tables.html"
-            i.icon-grid
-            span Tables
-        li
-          a href="login.html"
-            i.icon-interface-windows
-            span Login page
-        li
-          a href="#"
-            i.icon-mail
-            span Demo
-          .badge.badge-warning 6 New
+            span= t('sidebar.home')
     .admin-menu
       ul#side-admin-menu.side-menu.list-unstyled
         li
           a aria-expanded="false" data-toggle="collapse" href="#pages-nav-list"
             i.icon-interface-windows
-            span Dropdown
+            span= t('sidebar.users_and_roles')
           .arrow.pull-right
             i.fa.fa-angle-down
           ul#pages-nav-list.collapse.list-unstyled
-            li
-              a href="#"  Page 1
-            li
-              a href="#"  Page 2
-            li
-              a href="#"  Page 3
-            li
-              a href="#"  Page 4
-        li
-          a href="#"
-            i.icon-screen
-            span Demo
-        li
-          a href="#"
-            i.icon-flask
-            span Demo
-          .badge.badge-info Special
-        li
-          a href=""
-            i.icon-flask
-            span Demo
-        li
-          a href=""
-            i.icon-picture
-            span Demo
+            li= link_to t('sidebar.users'), '#'
+            li= link_to t('sidebar.roles'), roles_path

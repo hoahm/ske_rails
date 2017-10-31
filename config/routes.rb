@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
+  resources :roles
+
   root 'home#index'
 end

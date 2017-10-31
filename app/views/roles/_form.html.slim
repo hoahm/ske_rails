@@ -1,0 +1,34 @@
+section.forms
+  .container-fluid
+    header
+      h1.h3.display &nbsp;
+    .row
+      .col-md-12.col-lg-12
+        .card
+          .card-header.d-flex.align-items-center
+            h2.h5.display.display= t('.role')
+          .card-body
+            = simple_form_for(@role, html: { class: "form-horizontal" }, wrapper: :horizontal_form) do |f|
+              fieldset
+                = f.input :name, class: "form-control", autofocus: true
+              fieldset
+                table.table.table-striped.table-hover
+                  thead
+                    th Module
+                    th Manage
+                    th Read
+                    th Create
+                    th Update
+                    th Destroy
+                  tbody
+                    - resource_class.each do |resource|
+                      tr
+                        td= resource.classify.safe_constantize.model_name.human
+                        - %w( manage read create update destroy ).each do |per|
+                          td= check_box_tag "role[permissions][#{resource}][#{per}]", true, @role.permissions[resource] && @role.permissions[resource].include?(per)
+
+              .form-group.row
+                .offset-sm-4.col-sm-8
+                  .btn-toolbar
+                    = f.submit t('helpers.submit'), class: "btn btn-primary"
+                    = link_to t('helpers.cancel'), :back, class: "btn"
