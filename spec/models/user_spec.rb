@@ -42,4 +42,8 @@ RSpec.describe User, type: :model do
     it { should validate_attachment_size(:avatar).less_than(4.megabytes) }
     it { expect(User.attachment_definitions[:avatar][:styles][:thumb]).to eq(['300x300#', :jpg]) }
   end
+
+  describe 'Versioning' do
+    it { is_expected.to be_versioned }
+  end
 end

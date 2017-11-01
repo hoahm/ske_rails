@@ -1,0 +1,29 @@
+section.charts
+  .container-fluid
+    header
+      h1.h3.display &nbsp;
+    .row
+      .col-md-12
+        .card
+          .card-header.d-flex.align-items-center
+            h2.h5.display Histories
+          .card-body
+            table.table.table-striped.table-hover
+              thead
+                td #
+                td= t('.actor')
+                td= t('.action')
+                td= t('.object_type')
+                td= t('.object_id')
+                td= t('.timestamp')
+                td= t('.changeset')
+              tbody
+                - @versions.each do |version|
+                  tr
+                    td= version.id
+                    td= version.whodunnit ? link_to(version.whodunnit, manage_user_path(version.whodunnit)) : version.whodunnit
+                    td= history_event(version)
+                    td= version.item_type
+                    td= version.item_id
+                    td= format_datetime(version.created_at)
+                    td= track_change(version)

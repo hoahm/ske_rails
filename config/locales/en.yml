@@ -1,6 +1,7 @@
 en:
   breadcrumb:
     home: Home
+    histories: Histories
     roles: Roles
     users: Users
   date:
@@ -104,12 +105,14 @@ en:
     delete: Delete
     edit: Edit
     new: New
+    required_login: You have to sign in to view this page
     submit: Submit
     sign_in: Sign in
     sign_up: Sign up
     view: View
   sidebar:
     home: Home
+    histories: Histories
     roles: Roles
     users_and_roles: Users and Roles
     users: Users

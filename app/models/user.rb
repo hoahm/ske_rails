@@ -21,4 +21,6 @@ class User < ApplicationRecord
     size: { less_than: 4.megabyte }
 
   validates :full_name, presence: true
+
+  has_paper_trail on: [:update, :create], only: [:full_name, :email, :is_root]
 end

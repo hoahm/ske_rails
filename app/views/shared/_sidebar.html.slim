@@ -15,11 +15,15 @@ nav.side-navbar
           = link_to root_path do
             i.icon-home
             span= t('sidebar.home')
+        li
+          = link_to histories_path do
+            i.fa.fa-gear
+            span= t('sidebar.histories')
     .admin-menu
       ul#side-admin-menu.side-menu.list-unstyled
         li
           a aria-expanded="false" data-toggle="collapse" href="#pages-nav-list"
-            i.icon-interface-windows
+            i.fa.fa-users
             span= t('sidebar.users_and_roles')
           .arrow.pull-right
             i.fa.fa-angle-down

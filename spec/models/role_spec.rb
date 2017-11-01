@@ -18,4 +18,8 @@ RSpec.describe Role, type: :model do
     it { should validate_presence_of(:name) }
     it { should validate_uniqueness_of(:name) }
   end
+
+  describe 'Versioning' do
+    it { is_expected.to be_versioned }
+  end
 end

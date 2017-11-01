@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :roles
 
+  get 'histories', to: 'histories#index'
   root 'home#index'
 end
